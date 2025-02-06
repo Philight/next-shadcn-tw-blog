@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const connectMongoDB = async () => {
   if (mongoose.connections[0].readyState) {
     console.log('Using existing connection');
-    
+
     return true;
   }
 
@@ -13,18 +13,18 @@ const connectMongoDB = async () => {
 
     if (!URI) {
       console.log('Please set a MongoDB URI');
-      
-      throw new Error("Please set a MongoDB URI");
+
+      throw new Error('Please set a MongoDB URI');
     }
 
     await mongoose.connect(URI);
-    console.log("MongoDB connected");
+    console.log('MongoDB connected');
 
     return true;
   } catch (error) {
     console.log('connectMongoDB error');
-    
-    throw new Error("Could not connect to MongoDB");
+
+    throw new Error('Could not connect to MongoDB');
   }
 };
 

@@ -9,7 +9,5 @@ export interface IGenericProps {
   className?: string;
   children?: React.ReactNode;
 
-  style?:
-    | React.CSSProperties
-    | { [key: string]: MotionValue<any> | null | undefined };
+  style?: React.CSSProperties | { [key: string]: MotionValue<any> | null | undefined };
 }

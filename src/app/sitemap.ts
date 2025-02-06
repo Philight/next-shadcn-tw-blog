@@ -1,16 +1,16 @@
-import { getUsersWithPaginationAndFilter } from '@/utils/api/usersApi'
-import type { MetadataRoute } from 'next'
- 
+import { getUsersWithPaginationAndFilter } from '@/utils/api/usersApi';
+import type { MetadataRoute } from 'next';
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const usersAndPagination = await getUsersWithPaginationAndFilter()
+  const usersAndPagination = await getUsersWithPaginationAndFilter();
   const usersURL: MetadataRoute.Sitemap = usersAndPagination.users.map((user) => {
     return {
       url: `https://addwebsite.com/${user}`,
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 0.8,
-    }
-  })
+    };
+  });
 
   return [
     {
@@ -37,6 +37,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'yearly',
       priority: 0.9,
     },
-    ...usersURL
-  ]
+    ...usersURL,
+  ];
 }

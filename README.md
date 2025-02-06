@@ -9,6 +9,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 ```bash
 cp .env.example .env
 ```
+
 -> set `NEXT_PUBLIC_API_TOKEN`
 
 2. Install packages

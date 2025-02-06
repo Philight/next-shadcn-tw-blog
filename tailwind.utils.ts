@@ -1,4 +1,3 @@
-
 import * as fs from 'fs';
 
 import { deepMutate } from './src/utils/object';

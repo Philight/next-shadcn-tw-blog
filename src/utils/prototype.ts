@@ -39,7 +39,7 @@ Array.prototype.sortNested = function ({ property, order = 'asc' }: { property: 
 // @ts-ignore
 
 Array.prototype.removeItem = function (value: any): Array {
-  return this?.filter(item => item !== value);
+  return this?.filter((item) => item !== value);
 };
 
 // @ts-ignore

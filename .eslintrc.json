@@ -1,18 +1,8 @@
 {
   "root": true,
-  "plugins": [
-    "perfectionist",
-    "unused-imports",
-    "prettier"
-  ],  
-  "extends": [
-    "next/core-web-vitals",
-    "eslint:recommended",
-    "plugin:import/recommended"
-  ],
-  "ignorePatterns": [
-    ".git", ".env", ".next", "i18n", "node_modules", "public", "next.config.ts", "postcss.config.mjs", "tailwind.config.ts"
-  ],
+  "plugins": ["perfectionist", "unused-imports", "prettier"],
+  "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:import/recommended"],
+  "ignorePatterns": [".git", ".env", ".next", "i18n", "node_modules", "public", "next.config.ts", "postcss.config.mjs", "tailwind.config.ts"],
   "settings": {
     "import/resolver": {
       "node": {
@@ -26,10 +16,7 @@
     "no-unused-vars": 2,
     "no-console": 2,
     "no-var": 2,
-    "curly": [
-      2,
-      "all"
-    ],
+    "curly": [2, "all"],
     // "max-len": [
     //   2,
     //   {
@@ -43,9 +30,7 @@
         "SwitchCase": 1
       }
     ],
-    "arrow-body-style": [
-      0
-    ],
+    "arrow-body-style": [0],
     // "sort-imports": [
     //   2,
     //   {
@@ -59,18 +44,9 @@
         "allowAfterSuper": true
       }
     ],
-    "max-depth": [
-      2,
-      3
-    ],
-    "max-params": [
-      2,
-      3
-    ],
-    "complexity": [
-      2,
-      10
-    ],
+    "max-depth": [2, 3],
+    "max-params": [2, 3],
+    "complexity": [2, 10],
     "max-lines": [
       2,
       {
@@ -87,24 +63,15 @@
         "skipComments": true
       }
     ],
-    "max-nested-callbacks": [
-      2,
-      3
-    ],
-    "newline-after-var": [
-      2,
-      "always"
-    ],
+    "max-nested-callbacks": [2, 3],
+    "newline-after-var": [2, "always"],
     "no-param-reassign": [
       2,
       {
         "props": true
       }
     ],
-    "linebreak-style": [
-      2,
-      "windows"
-    ],
+    "linebreak-style": [2, "windows"],
     "padding-line-between-statements": [
       2,
       {
@@ -114,25 +81,13 @@
       },
       {
         "blankLine": "always",
-        "prev": [
-          "const",
-          "let",
-          "var"
-        ],
+        "prev": ["const", "let", "var"],
         "next": "*"
       },
       {
         "blankLine": "any",
-        "prev": [
-          "const",
-          "let",
-          "var"
-        ],
-        "next": [
-          "const",
-          "let",
-          "var"
-        ]
+        "prev": ["const", "let", "var"],
+        "next": ["const", "let", "var"]
       }
     ],
     "no-inline-comments": 2,
@@ -155,12 +110,7 @@
         }
       }
     ],
-    "object-curly-spacing": [
-      2,
-      "always"
-    ],
-    "prefer-destructuring": [
-      2
-    ]
+    "object-curly-spacing": [2, "always"],
+    "prefer-destructuring": [2]
   }
 }

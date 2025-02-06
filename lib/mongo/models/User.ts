@@ -1,8 +1,5 @@
-import { UserInterface } from "@/app/api/auth/[...nextauth]/next-auth";
-import mongoose, {
-  Schema, 
-  models
-} from "mongoose";
+import { UserInterface } from '@/app/api/auth/[...nextauth]/next-auth';
+import mongoose, { Schema, models } from 'mongoose';
 
 const UserSchema = new Schema<UserInterface>(
   {
@@ -41,12 +38,12 @@ const UserSchema = new Schema<UserInterface>(
           type: String,
           required: true,
         },
-      }
+      },
     ],
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
-const User = models?.User || mongoose.model('User', UserSchema)
+const User = models?.User || mongoose.model('User', UserSchema);
 
 export default User;

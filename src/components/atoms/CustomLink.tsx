@@ -1,13 +1,15 @@
-import Link, { LinkProps } from "next/link"
-import { ReactNode } from "react"
+import Link, { LinkProps } from 'next/link';
+import { ReactNode } from 'react';
 
 export interface CustomLinkPropsType extends LinkProps {
-    children: ReactNode
+  children: ReactNode;
 }
 export const CustomLink = (props: CustomLinkPropsType) => {
-  const { children, ...rest } = props
+  const { children, ...rest } = props;
 
   return (
-    <Link {...rest} className="">{children}</Link>
-  )
-}
+    <Link {...rest} className="">
+      {children}
+    </Link>
+  );
+};

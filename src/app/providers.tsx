@@ -11,7 +11,7 @@ import { AuthProvider } from '@/context/AuthProvider';
 import { Toaster } from '@/shadcn/sonner';
 import { TooltipProvider } from '@/shadcn/tooltip';
 import { MotionLazy } from '@/molecules/framer-motion';
-// import ProgressBar from 'src/components/progress-bar';
+import ProgressBar from '@/molecules/progress-bar';
 
 // import { getQueryClient } from 'src/services/get-query-client';
 
@@ -28,7 +28,7 @@ export default function Providers({ children }: { children: ReactNode }) {
         <TooltipProvider>
           <MotionLazy>
             <Toaster />
-            {/*<ProgressBar />*/}
+            <ProgressBar />
             {children}
           </MotionLazy>
         </TooltipProvider>

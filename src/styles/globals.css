@@ -2,6 +2,8 @@
 @import './tailwind.css';
 
 /* EXTERNAL */
+/*<link rel='stylesheet' href='nprogress.css'/>*/
+@import 'nprogress/nprogress.css';
 
 /* --- Layer: Base --- */
 

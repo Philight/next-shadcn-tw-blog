@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 
-import { deepMutate } from 'src/utils/object';
-import 'src/utils/prototype';
+import { deepMutate } from './src/utils/object';
+import './src/utils/prototype';
 
 // ================================================================
 

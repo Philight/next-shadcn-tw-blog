@@ -102,6 +102,10 @@ export default async function RootLayout({ children, }: Readonly<{
         <NextIntlClientProvider messages={messages}>
           <Providers>{children}</Providers>
         </NextIntlClientProvider>
+        {/*      <Script
+        src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"
+        strategy="lazyOnload"
+      />*/}
       </body>
     </html>
   );

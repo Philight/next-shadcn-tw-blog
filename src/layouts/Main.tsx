@@ -11,7 +11,7 @@ import type { IGenericProps } from '@/types/generic-types';
 
 // ==================================================================
 
-export interface MainPropsType extends IGenericProps, Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, "style"> {
+export interface MainPropsType extends IGenericProps, Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'style'> {
   children: ReactNode;
   title: string;
 }

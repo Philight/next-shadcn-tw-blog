@@ -2,7 +2,7 @@ import { cn } from '@/utils/functions';
 import * as React from 'react';
 
 const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & { htmlTag?: string | any }>(({ className, htmlTag, ...props }, ref) => {
-  const HTMLElement: any = (htmlTag ?? 'div');
+  const HTMLElement: any = htmlTag ?? 'div';
 
   return <HTMLElement ref={ref} className={cn('rounded-xl border bg-card text-card-foreground shadow p-6 space-y-4', className)} {...props} />;
 });
@@ -27,11 +27,13 @@ const CardDescription = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HT
 
 CardDescription.displayName = 'CardDescription';
 
-const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>& {htmlTag?: string | any}>(({ className, htmlTag, ...props }, ref) => {
-  const HTMLElement: any = (htmlTag ?? 'div');
+const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & { htmlTag?: string | any }>(
+  ({ className, htmlTag, ...props }, ref) => {
+    const HTMLElement: any = htmlTag ?? 'div';
 
-  return <HTMLElement ref={ref} className={cn(className)} {...props} />;
-});
+    return <HTMLElement ref={ref} className={cn(className)} {...props} />;
+  },
+);
 
 CardContent.displayName = 'CardContent';
 

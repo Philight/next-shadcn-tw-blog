@@ -12,11 +12,9 @@ import type { IGenericProps } from '@/types/generic-types';
 
 // ============================================================================
 
-export interface BlogPostProps extends IGenericProps,PostType {
-  
-}
+export interface BlogPostProps extends IGenericProps, PostType {}
 
-export default function BlogPost({ className,  content, author }: BlogPostProps) {
+export default function BlogPost({ className, content, author }: BlogPostProps) {
   const t = useTranslations();
 
   const noBlogPosts = (

@@ -6,7 +6,7 @@ import {
 // app/api/q2/:path
 export async function POST(req: NextRequest): Promise<NextResponse> {
   let path = req.nextUrl.searchParams.get('path');
-  path = Array.isArray(path)? path.join('/') : path;
+  path = Array.isArray(path) ? path.join('/') : path;
 
   const apiUrl = `https://external-api.com/${path}`;
 
@@ -23,8 +23,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
 
     const data = await response.json();
 
-    return NextResponse.json(data, { statusText: 'Fetched resource succesfully.', status: 200});
-
+    return NextResponse.json(data, { statusText: 'Fetched resource succesfully.', status: 200 });
   } catch (error) {
     return NextResponse.json({ statusText: 'Error proxying request' }, { status: 500 });
   }

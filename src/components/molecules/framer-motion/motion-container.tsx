@@ -5,7 +5,7 @@ import { varContainer } from './variants';
 import type { IGenericProps } from '@/types/generic-types';
 // ----------------------------------------------------------------------
 
-export interface Props extends IGenericProps{
+export interface Props extends IGenericProps {
   animate?: boolean;
   action?: boolean;
 }

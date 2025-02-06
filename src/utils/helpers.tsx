@@ -8,17 +8,7 @@ import { ReactNode } from 'react';
 type Message = string | ReactNode | object;
 type SimpleMessage = string | ReactNode;
 
-export function showToast({
-  type,
-  status = -1,
-  message,
-  options,
-}: {
-  type?: string;
-  status?: number;
-  message: Message
-  options?: ExternalToast;
-}) {
+export function showToast({ type, status = -1, message, options }: { type?: string; status?: number; message: Message; options?: ExternalToast }) {
   if (type) {
     switch (type) {
       case 'SUCCESS':

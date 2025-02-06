@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {
-  cn, cva, 
+  cn, cva 
 } from '@/utils/functions';
 
 import type { IGenericProps } from '@/types/generic-types';
@@ -52,7 +52,7 @@ const buttonVariants: any = cva('btn', {
 
 // ============================================================================
 
-export interface IButtonProps extends IGenericProps, Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "style">{
+export interface IButtonProps extends IGenericProps, Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'style'> {
   variant?: 'outline' | 'filled';
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'x-lg';
   color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'ghost' | 'info' | 'success' | 'warning' | 'error';

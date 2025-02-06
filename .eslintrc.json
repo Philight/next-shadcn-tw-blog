@@ -1,5 +1,6 @@
 {
   "root": true,
+
   "plugins": ["perfectionist", "unused-imports", "@typescript-eslint", "prettier"],
   "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:import/recommended"],
   "parser": "@typescript-eslint/parser",
@@ -10,6 +11,10 @@
       "jsx": true
     },
     "project": "./tsconfig.json"
+  },
+  "env": {
+    "browser": true,
+    "es6": true
   },
   "ignorePatterns": [".git", ".env", ".next", "i18n", "node_modules", "public", "next.config.ts", "postcss.config.mjs", "tailwind.config.ts"],
   "settings": {
@@ -128,7 +133,7 @@
     "react/display-name": 0,
 
     "@typescript-eslint/no-unused-vars": [
-      1,
+      0,
       { "caughtErrors": "none", "varsIgnorePattern": "^_", "argsIgnorePattern": "^_", "destructuredArrayIgnorePattern": "^_", "ignoreRestSiblings": true }
     ]
   }

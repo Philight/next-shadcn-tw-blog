@@ -67,8 +67,6 @@
     --color-blue-primary: rgb(0 60 86);
     --color-red-primary: rgb(255 50 50);
 
-    --color-primary: rgb(182 37 37);
-    --color-secondary: rgb(59 14 0);
     --color-tertiary: var(--color-hermes-orange);
 
     /** 

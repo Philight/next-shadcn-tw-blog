@@ -12,6 +12,7 @@
     "prettier:fix": "prettier --write \"./**/*.{js,cjs,mjs,ts,tsx,css,scss,md,json,njk,pug}\" --cache",
     "format": "npm run prettier:fix && npm run lint:fix",
     "ts": "tsc --noEmit --incremental",
+    "env": "cp .env.example .env",
     "clean": "rimraf build",
     "clean:cache": "rimraf .next",
     "clean:all": "rimraf build .next node_modules"

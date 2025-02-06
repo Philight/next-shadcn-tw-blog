@@ -28,6 +28,8 @@ export const handleServerError = (error: Error | any) => {
   throw error;
 };
 
+// ================================================
+
 export async function fetchApi(urlOrPath: URL | string, options?: any) {
   const { method = 'GET', body, headers, ...fetchOptions } = options;
   const { 'Content-Type': contentType } = headers;
@@ -58,6 +60,8 @@ export async function fetchApi(urlOrPath: URL | string, options?: any) {
   return await res.json();
 }
 
+// ================================================
+
 export const api = axios.create({
   // adapter: 'fetch',
   // fetchOptions: { cache: "force-cache" },
@@ -68,7 +72,7 @@ export const api = axios.create({
     'Accept-Language':
       typeof navigator !== 'undefined' ? ((navigator.languages && navigator.languages.length ? navigator.languages[0] : navigator.language) ?? 'cs') : 'cs',
   },
-  withCredentials: true,
+  // withCredentials: true,
 });
 
 export async function axiosApi(urlOrPath: URL | string, options?: any) {

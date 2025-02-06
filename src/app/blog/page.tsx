@@ -26,7 +26,6 @@ export default async function Home() {
 
   if (!posts.length) return <ServerError />;
 
-  console.log('HOME', posts);
   return (
     <>
       <BlogList posts={posts} />

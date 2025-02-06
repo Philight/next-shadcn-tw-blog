@@ -12,6 +12,7 @@ import { AVAILABLE_LOCALES, ICONS_SIZES } from '@/utils/constants';
 import { setUserLocale } from '@/utils/server/functions/locale';
 import { routes } from '/src/navigation';
 import { cn } from '@/utils/functions';
+import type { IGenericProps } from '@/types/generic-types';
 
 import Icon from '@/atoms/Icon';
 import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from '@/shadcn/menubar';

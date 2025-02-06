@@ -11,6 +11,6 @@ export default async function Page() {
 // ===============================================================
 
 export const metadata: Metadata = {
-  title: 'Blog | New post',
+  title: 'New post',
   description: 'New blog post',
 };

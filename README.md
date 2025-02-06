@@ -4,7 +4,20 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+1. Set ENV variables
+
+```bash
+cp .env.example .env
+```
+-> set `NEXT_PUBLIC_API_TOKEN`
+
+2. Install packages
+
+```bash
+npm i
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
@@ -16,7 +29,11 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+#
+
+#
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 

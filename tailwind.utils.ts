@@ -1,14 +1,7 @@
-// TODO: use CSS/SCSS/PostCSS parser lib
 
 import * as fs from 'fs';
 
-// import postcss from 'postcss';
-// import postcssPluginSCSS from 'postcss-scss';
-// import postcssPluginSass from '@csstools/postcss-sass';
-// import postcssPluginReporter from 'postcss-reporter';
-
 import { deepMutate } from './src/utils/object';
-// import '@philight/prototype'
 import './src/utils/prototype';
 
 // ================================================================

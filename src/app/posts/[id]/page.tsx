@@ -8,6 +8,7 @@ import ServerError from '@/molecules/ServerError';
 
 // ===============================================================
 
+// Force SSR default
 export const dynamic = 'force-dynamic';
 
 // ===============================================================
@@ -20,10 +21,7 @@ export default async function Page({ params }: Props) {
   const resolvedParams = await params;
   const { id } = resolvedParams;
 
-  // const data = await fetch(`https://api.vercel.app/blog/${id}`);
-  // const post: Post[] = await data.json();
-
-  let post: PostType = {};
+  let post: PostType;
   try {
     post = await getPost(id);
   } catch (e) {}
@@ -39,17 +37,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
   const { id } = resolvedParams;
 
-  // const data = await fetch(`https://api.vercel.app/blog/${id}`);
-  // const post: Post[] = await data.json();
-
   let post: PostType;
   try {
     post = await getPost(id);
   } catch (e) {}
 
   if (!post) {
-    post = { id: null, author: '', title: '' };
+    post = { author: '', title: '' };
   }
 
-  return { title: `Blog | Post ${post.id}`, description: `${post.author} | ${post.title}` };
+  return { title: `Post: ${post.title}`, description: `${post.title} ~ ${post.author}` };
 }

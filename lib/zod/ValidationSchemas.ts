@@ -1,4 +1,6 @@
-import { array, literal, object, string } from 'zod';
+import {
+  array, literal, object, string 
+} from 'zod';
 
 export const newPostSchema = object({
   title: string({ required_error: 'Title is required' }).min(3, 'Title has to have a minimum of 3 chars'),

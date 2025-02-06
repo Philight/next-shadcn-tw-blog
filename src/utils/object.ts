@@ -11,6 +11,8 @@ export const isObject = (item: any): boolean => item && typeof item === 'object'
  */
 export const deepMerge = <T, R>(target: T, source: R): T => {
   const output = { ...target };
+
+
   if (isObject(target) && isObject(source)) {
     Object.keys(source).forEach((key) => {
       if (isObject(source[key])) {
@@ -37,15 +39,13 @@ export const deepMerge = <T, R>(target: T, source: R): T => {
 export const deepMutate = (obj: GenericObject, path: string, value: any): GenericObject => {
   const keys = path.split('.');
 
-  if (value === undefined) return obj;
+  if (value === undefined) {return obj;}
 
   function setPropertyRecursive(o: GenericObject, k: string[], v: any, index: number = 0): GenericObject {
     // Check if we have reached the final key in the path
     if (index === k.length - 1) {
       // Set the value at the final key
-      return Object.assign(o, {
-        [k[index]]: v,
-      });
+      return Object.assign(o, { [k[index]]: v, });
     }
 
     // Check if the current key does not exist or is not an object
@@ -54,9 +54,7 @@ export const deepMutate = (obj: GenericObject, path: string, value: any): Generi
     }
 
     // Recursively call with the next key in the path
-    return Object.assign(o, {
-      [k[index]]: setPropertyRecursive(o[k[index]] || {}, k, v, index + 1),
-    });
+    return Object.assign(o, { [k[index]]: setPropertyRecursive(o[k[index]] || {}, k, v, index + 1), });
   }
 
   // Start the recursion with the provided object and keys

@@ -40,6 +40,8 @@ const transformColor = (declaration: String) => {
   // RGB
   if (declarationValue.includes('rgb(')) {
     const rgb = declarationValue.split('rgb(')[1].split(')')[0];
+
+
     return rgb.includes(',') ? `rgba(${rgb}, <alpha-value>)` : `rgba(${rgb} / <alpha-value>)`;
 
     // HEX

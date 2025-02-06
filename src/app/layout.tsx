@@ -1,6 +1,10 @@
-import type { Metadata, Viewport } from 'next';
+import type {
+  Metadata, Viewport 
+} from 'next';
 import { NextIntlClientProvider } from 'next-intl';
-import { getLocale, getMessages } from 'next-intl/server';
+import {
+  getLocale, getMessages 
+} from 'next-intl/server';
 import { ReactNode } from 'react';
 
 import Providers from './providers';
@@ -86,9 +90,7 @@ export const metadata: Metadata = {
 
 // ============================================================
 
-export default async function RootLayout({
-  children,
-}: Readonly<{
+export default async function RootLayout({ children, }: Readonly<{
   children: ReactNode;
 }>) {
   const locale = await getLocale();

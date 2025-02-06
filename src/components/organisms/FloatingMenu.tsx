@@ -1,21 +1,30 @@
 'use client';
 
-import React from 'react';
+import React, {
+  useEffect, useState 
+} from 'react';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
-import { signOut, useSession } from 'next-auth/react';
+import {
+  signOut, useSession 
+} from 'next-auth/react';
 import { useTranslations } from 'next-intl';
-import { useEffect, useState } from 'react';
-import { Languages, Moon, Sun } from 'lucide-react';
+import {
+  Languages, Moon, Sun 
+} from 'lucide-react';
 
-import { AVAILABLE_LOCALES, ICONS_SIZES } from '@/utils/constants';
+import {
+  AVAILABLE_LOCALES, ICONS_SIZES 
+} from '@/utils/constants';
 import { setUserLocale } from '@/utils/server/functions/locale';
 import { routes } from '/src/navigation';
 import { cn } from '@/utils/functions';
 import type { IGenericProps } from '@/types/generic-types';
 
 import Icon from '@/atoms/Icon';
-import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from '@/shadcn/menubar';
+import {
+  Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger 
+} from '@/shadcn/menubar';
 
 // ================================================================
 

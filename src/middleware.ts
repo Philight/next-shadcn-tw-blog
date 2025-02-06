@@ -1,5 +1,7 @@
 export { default } from 'next-auth/middleware';
-import { NextResponse, NextRequest } from 'next/server';
+import {
+  NextResponse, NextRequest 
+} from 'next/server';
 import { routes } from './navigation';
 
 // ----------------------------------------------------------------------
@@ -18,6 +20,8 @@ export async function middleware(request: NextRequest) {
    * Manual redirecting (with business conditions)
    */
   const requestPathname = request.nextUrl.pathname;
+
+
   switch (true) {
     // Home
     case requestPathname === routes.home:

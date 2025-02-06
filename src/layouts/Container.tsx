@@ -1,5 +1,7 @@
 import { cn } from '@/utils/functions';
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
+import {
+  DetailedHTMLProps, HTMLAttributes, ReactNode 
+} from 'react';
 
 export interface ContainerPropsType extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> {
   children: ReactNode;

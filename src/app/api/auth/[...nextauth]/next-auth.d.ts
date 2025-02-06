@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 import NextAuth, { DefaultSession } from 'next-auth';
-import { JWT, DefaultJWT } from 'next-auth/jwt';
+import {
+  JWT, DefaultJWT 
+} from 'next-auth/jwt';
 
 export interface SocialsInterface {
   label: string;

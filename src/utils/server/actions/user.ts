@@ -10,9 +10,13 @@ import bcrypt from 'bcryptjs';
 
 import connectMongoDB from '/lib/mongo/DBConnection';
 import User from '/lib/mongo/models/User';
-import { signUpSchema, socialSchema, updatePasswordSchema } from '/lib/zod/ValidationSchemas';
+import {
+  signUpSchema, socialSchema, updatePasswordSchema 
+} from '/lib/zod/ValidationSchemas';
 
-import { SocialsInterface, UserInterface } from '@/app/api/auth/[...nextauth]/next-auth';
+import {
+  SocialsInterface, UserInterface 
+} from '@/app/api/auth/[...nextauth]/next-auth';
 import { authOptions } from '../authOptions';
 import { saltAndHashPassword } from '../functions/auth';
 
@@ -36,9 +40,7 @@ export async function createUser(prevState: any, formData: FormData) {
 
     await connectMongoDB();
 
-    const existingUser = await User.findOne({
-      $or: [{ email: sanitizedEmail }, { username: sanitizedUsername }],
-    });
+    const existingUser = await User.findOne({ $or: [{ email: sanitizedEmail }, { username: sanitizedUsername }], });
 
     if (existingUser) {
       if (existingUser.email === sanitizedEmail) {

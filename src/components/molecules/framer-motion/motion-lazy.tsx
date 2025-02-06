@@ -1,6 +1,8 @@
 'use client';
 
-import { m, domMax, LazyMotion } from 'framer-motion';
+import {
+  m, domMax, LazyMotion 
+} from 'framer-motion';
 
 // ----------------------------------------------------------------------
 

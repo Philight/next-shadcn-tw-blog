@@ -1,4 +1,6 @@
-import { m, MotionProps } from 'framer-motion';
+import {
+  m, MotionProps 
+} from 'framer-motion';
 
 import { varContainer } from './variants';
 

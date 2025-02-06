@@ -1,5 +1,7 @@
 import { cn } from '@/utils/functions';
-import { HTMLAttributes, ReactNode } from 'react';
+import {
+  HTMLAttributes, ReactNode 
+} from 'react';
 
 export interface HeadingPropsType extends HTMLAttributes<HTMLHeadingElement> {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';

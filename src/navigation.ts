@@ -1,6 +1,8 @@
 import { createLocalizedPathnamesNavigation } from 'next-intl/navigation';
 
-import { locales, pathnames, localePrefix } from './config-global';
+import {
+  locales, pathnames, localePrefix 
+} from './config-global';
 // import { locale, messages } from '../i18n/request';
 
 export const { Link, getPathname, redirect, usePathname, useRouter } = createLocalizedPathnamesNavigation({
@@ -18,13 +20,9 @@ const ROOTS = {
 
 export const routes = {
   home: '/',
-  landing: {
-    root: ROOTS.HOME,
-  },
+  landing: { root: ROOTS.HOME, },
   // BLOG
-  blog: {
-    root: ROOTS.BLOG,
-  },
+  blog: { root: ROOTS.BLOG, },
   posts: {
     root: ROOTS.POSTS,
     id: `${ROOTS.POSTS}/{$id}`,

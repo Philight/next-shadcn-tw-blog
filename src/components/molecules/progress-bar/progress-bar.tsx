@@ -1,11 +1,15 @@
 'use client';
 
 import NProgress from 'nprogress';
-import { Suspense, useEffect } from 'react';
+import {
+  Suspense, useEffect 
+} from 'react';
 
 // import { useRouter, usePathname, useSearchParams } from 'src/routes/hooks';
 
-import { useRouter, usePathname, useSearchParams } from 'next/navigation';
+import {
+  useRouter, usePathname, useSearchParams 
+} from 'next/navigation';
 
 import StyledProgressBar from './styles';
 
@@ -32,6 +36,8 @@ export default function ProgressBar() {
 
       const filteredAnchors = Array.from(anchorElements).filter((element) => {
         const href = element.getAttribute('href');
+
+
         return href && href.startsWith('/');
       });
 
@@ -45,6 +51,7 @@ export default function ProgressBar() {
     window.history.pushState = new Proxy(window.history.pushState, {
       apply: (target, thisArg, argArray: PushStateInput) => {
         NProgress.done();
+
         return target.apply(thisArg, argArray);
       },
     });

@@ -1,4 +1,6 @@
-export { useFormContext, useForm } from 'react-hook-form';
+export {
+  useFormContext, useForm 
+} from 'react-hook-form';
 
 export * from './utils';
 export { default } from './form-provider';

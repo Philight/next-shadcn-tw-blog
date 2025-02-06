@@ -1,5 +1,7 @@
 import { getImageWithPlaiceholder } from '@/utils/server/functions/images';
-import { NextRequest, NextResponse } from 'next/server';
+import {
+  NextRequest, NextResponse 
+} from 'next/server';
 
 export interface GetImageWithPlaiceholderResponseType {
   img: {

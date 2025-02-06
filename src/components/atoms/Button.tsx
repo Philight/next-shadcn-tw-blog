@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { cn, cva, type VariantProps } from '@/utils/functions';
+import {
+  cn, cva, type VariantProps 
+} from '@/utils/functions';
 
 import type { IGenericProps } from '@/types/generic-types';
 
@@ -85,6 +87,8 @@ const Button = React.forwardRef<HTMLButtonElement, IButtonProps>(
     ref,
   ) => {
     const hasChildren = !!children;
+
+
     return (
       <div className={cn(`button__c f-center`, className)} style={style}>
         <button
@@ -113,6 +117,8 @@ const Button = React.forwardRef<HTMLButtonElement, IButtonProps>(
     );
   },
 );
+
+
 Button.displayName = 'Button';
 
 // ============================================================================

@@ -20,11 +20,13 @@ interface Props {}
 
 export default async function Home() {
   let posts: PostType[] = [];
+
+
   try {
     posts = await getPosts();
   } catch (e) {}
 
-  if (!posts.length) return <ServerError />;
+  if (!posts.length) {return <ServerError />;}
 
   return (
     <>

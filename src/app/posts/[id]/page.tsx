@@ -22,11 +22,13 @@ export default async function Page({ params }: Props) {
   const { id } = resolvedParams;
 
   let post: PostType;
+
+
   try {
     post = await getPost(id);
   } catch (e) {}
 
-  if (!post) return <ServerError />;
+  if (!post) {return <ServerError />;}
 
   return <BlogPost {...post} />;
 }
@@ -38,6 +40,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = resolvedParams;
 
   let post: PostType;
+
+
   try {
     post = await getPost(id);
   } catch (e) {}

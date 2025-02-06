@@ -8,7 +8,9 @@ import { newPostSchema } from '@/lib/zod/ValidationSchemas';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import { Button } from '@/components/shadcn/button';
-import FormProvider, { Field, useForm } from '@/components/molecules/hook-form';
+import FormProvider, {
+  Field, useForm 
+} from '@/components/molecules/hook-form';
 import { useFormErrors } from '@/hooks/use-form-errors';
 
 import Container from '@/layouts/Container';
@@ -53,7 +55,7 @@ export default function CreatePost({ className }: CreatePostProps) {
         event?.preventDefault();
         clearErrors();
 
-        if (IS_DEVELOPMENT) showToast({ type: 'OBJECT', message: data });
+        if (IS_DEVELOPMENT) {showToast({ type: 'OBJECT', message: data });}
 
         // TRANSFORM FIELDS & SEND REQUEST
 

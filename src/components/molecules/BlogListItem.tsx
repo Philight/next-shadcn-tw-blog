@@ -4,14 +4,20 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { SquareArrowOutUpRight } from 'lucide-react';
 
-import { Card, CardContent, CardHeader, CardTitle } from '../shadcn/card';
-import { Tooltip, TooltipContent, TooltipTrigger } from '../shadcn/tooltip';
+import {
+  Card, CardContent, CardHeader, CardTitle 
+} from '../shadcn/card';
+import {
+  Tooltip, TooltipContent, TooltipTrigger 
+} from '../shadcn/tooltip';
 import LazyLoadImage from '@/components/atoms/LazyLoadImage';
 
 import { ICONS_SIZES } from '@/utils/constants';
 import { cn } from '@/utils/functions';
 import type { PostType } from '@/utils/api/types';
-import { routes, navigation } from '/src/navigation';
+import {
+  routes, navigation 
+} from '/src/navigation';
 
 import type { IGenericProps } from '@/types/generic-types';
 

@@ -1,13 +1,24 @@
 // import { headers } from 'next/headers';
 import { twMerge } from 'tailwind-merge';
-import { ExternalToast, toast } from 'sonner';
+import {
+  ExternalToast, toast 
+} from 'sonner';
 import { ReactNode } from 'react';
-import { type ClassValue, clsx } from 'clsx';
-export { cva, type VariantProps } from 'class-variance-authority';
-import axios from 'axios';
-import { Options, serialize } from 'object-to-formdata';
+import {
+  type ClassValue, clsx 
+} from 'clsx';
 
-import { IS_SERVER, IS_DEVELOPMENT } from './constants';
+export {
+  cva, type VariantProps 
+} from 'class-variance-authority';
+import axios from 'axios';
+import {
+  Options, serialize 
+} from 'object-to-formdata';
+
+import {
+  IS_SERVER, IS_DEVELOPMENT 
+} from './constants';
 
 // ================================================
 
@@ -18,6 +29,8 @@ const token = process.env.NEXT_PUBLIC_API_TOKEN;
 export function getBaseUrlBasedOnServer() {
   // need to include process.env.NEXT_PUBLIC_API_URL if using this function inside a server side component, no need to include it if using the function inside client side component
   const baseUrl = process.env.NEXT_PUBLIC_API_URL;
+
+
   return baseUrl;
 }
 
@@ -41,9 +54,7 @@ export async function fetchApi(urlOrPath: URL | string, options?: any) {
 
   const includeBody =
     method !== 'GET'
-      ? {
-          body: transformedBody,
-        }
+      ? { body: transformedBody, }
       : {};
 
   const res = await fetch(url, {
@@ -102,6 +113,8 @@ export const encodeId = (id: string): string => Buffer.from(id).toString('base64
 export const decodeId = (encodedId: string): string => Buffer.from(encodedId, 'base64').toString('utf8');
 
 const VALID_URL = /^((https?:\/\/)|(www\.{1}\w)).*/i; // http | https | www
+
+
 export const isValidUrl = (url: URL | string) => url.match(VALID_URL);
 
 export const serializeJsonToFormData = (data: any, options?: Options) =>

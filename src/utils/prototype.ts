@@ -27,11 +27,14 @@ Array.prototype.sortNested = function ({ property, order = 'asc' }: { property: 
     let i = 0;
     let a = aParam;
     let b = bParam;
+
+
     while (i < len) {
       a = a[prop[i]];
       b = b[prop[i]];
       i++;
     }
+
     return a === b ? 0 : a < b ? (isAsc ? -1 : 1) : isAsc ? 1 : -1;
   });
 };

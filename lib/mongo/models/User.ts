@@ -1,5 +1,7 @@
 import { UserInterface } from '@/app/api/auth/[...nextauth]/next-auth';
-import mongoose, { Schema, models } from 'mongoose';
+import mongoose, {
+  Schema, models 
+} from 'mongoose';
 
 const UserSchema = new Schema<UserInterface>(
   {

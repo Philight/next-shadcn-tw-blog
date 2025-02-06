@@ -2,9 +2,10 @@ import { m } from 'framer-motion';
 
 import { varContainer } from './variants';
 
+import type { IGenericProps } from '@/types/generic-types';
 // ----------------------------------------------------------------------
 
-export interface Props {
+export interface Props extends IGenericProps{
   animate?: boolean;
   action?: boolean;
 }

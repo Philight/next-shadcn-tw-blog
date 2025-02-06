@@ -11,6 +11,7 @@ export interface HeroPropsType extends IGenericProps {
   imageProps: {
     src: string;
     alt: string;
+  fill?: any;
   };
 }
 

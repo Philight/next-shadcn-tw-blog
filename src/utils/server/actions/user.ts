@@ -8,8 +8,8 @@ import xss from 'xss';
 import { ZodError } from 'zod';
 import bcrypt from 'bcryptjs';
 
-import connectMongoDB from '/lib/mongo/DBConnection';
-import User from '/lib/mongo/models/User';
+import connectMongoDB from 'lib/mongo/DBConnection';
+import User from 'lib/mongo/models/User';
 // import {
 //   signUpSchema, socialSchema, updatePasswordSchema
 // } from '/lib/zod/ValidationSchemas';

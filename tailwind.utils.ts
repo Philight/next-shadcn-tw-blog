@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 
-import { deepMutate } from './src/utils/object';
-import './src/utils/prototype';
+import { deepMutate } from 'src/utils/object';
+import 'src/utils/prototype';
 
 // ================================================================
 
@@ -108,7 +108,7 @@ export function parseCSS(pathToFile) {
 
   for (const CSSDeclaration of filteredLines) {
     const declarationName = String(CSSDeclaration.split(':')[0]).removeWhitespace(); // --font-family-heading
-    const prefix = prefixes.find((pref) => declarationName.includes(pref)); // --font-family-
+    const prefix = prefixes.find((pref) => declarationName.includes(pref)) ?? ''; // --font-family-
 
     const propertyName = declarationName.split(prefix)[1]; // heading
     const tailwindName = PROPERTY_PREFIXES[prefix]; // fontFamily

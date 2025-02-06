@@ -75,11 +75,11 @@ export const api = axios.create({
   // withCredentials: true,
 });
 
-export async function axiosApi(urlOrPath: URL | string, options?: any) {
+export async function axiosApi(urlOrPath: any, options?: any) {
   const { method = 'GET', data, ...axiosOptions } = options;
 
   const baseUrl = getBaseUrlBasedOnServer();
-  const url = urlOrPath instanceof URL ? urlOrPath.toString() : urlOrPath.match(VALID_URL) ? new URL(urlOrPath) : `${baseUrl}${urlOrPath}`;
+  const url = urlOrPath instanceof URL ? urlOrPath.toString() : isValidUrl(urlOrPath) ? urlOrPath : `${baseUrl}${urlOrPath}`;
 
   const res = await api(url, {
     method,
@@ -103,7 +103,7 @@ export const decodeId = (encodedId: string): string => Buffer.from(encodedId, 'b
 
 const VALID_URL = /^((https?:\/\/)|(www\.{1}\w)).*/i; // http | https | www
 
-export const isValidUrl = (url: URL | string) => url.match(VALID_URL);
+export const isValidUrl = (url: string) => url.match(VALID_URL);
 
 export const serializeJsonToFormData = (data: any, options?: Options) =>
   serialize(data, {

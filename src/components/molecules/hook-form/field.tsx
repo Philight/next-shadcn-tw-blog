@@ -10,7 +10,10 @@ import { Textarea } from '@/components/shadcn/textarea';
 type Props = {
   field: 'input' | 'textarea' | 'datepicker';
   name: string;
-};
+  label?: string;
+  helperText?: string;
+  type?: string;
+} & { [key: string]: unknown };
 
 export function Field({ field = 'input', name = 'textField', label = 'Field', helperText, type, ...other }: Props) {
   const { control } = useFormContext();

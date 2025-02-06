@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {
-  cn, cva, type VariantProps 
+  cn, cva, 
 } from '@/utils/functions';
 
 import type { IGenericProps } from '@/types/generic-types';
@@ -11,7 +11,7 @@ import type { IGenericProps } from '@/types/generic-types';
 /**
  * DAISYUI CLASSES
  */
-const buttonVariants = cva('btn', {
+const buttonVariants: any = cva('btn', {
   variants: {
     variant: {
       filled: '',
@@ -48,11 +48,11 @@ const buttonVariants = cva('btn', {
     size: 'md',
     color: 'neutral',
   },
-});
+} as any);
 
 // ============================================================================
 
-export interface IButtonProps extends IGenericProps, React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
+export interface IButtonProps extends IGenericProps, Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "style">{
   variant?: 'outline' | 'filled';
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'x-lg';
   color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'ghost' | 'info' | 'success' | 'warning' | 'error';

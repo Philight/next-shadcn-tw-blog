@@ -23,7 +23,7 @@ export default async function Home() {
     posts = await getPosts();
   } catch (e) {}
 
-  if (!posts.length) {
+  if (!posts || !posts.length) {
     return <ServerError />;
   }
 

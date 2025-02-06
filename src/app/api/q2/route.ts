@@ -1,8 +1,14 @@
+import {
+  NextRequest, NextResponse 
+} from 'next/server';
+
 // pages/api/proxy/[...path].js
 // app/api/q2/:path
-export default async function handler(req, res) {
-  const { path } = req.query;
-  const apiUrl = `https://external-api.com/${path.join('/')}`;
+export async function POST(req: NextRequest): Promise<NextResponse> {
+  let path = req.nextUrl.searchParams.get('path');
+  path = Array.isArray(path)? path.join('/') : path;
+
+  const apiUrl = `https://external-api.com/${path}`;
 
   try {
     const response = await fetch(apiUrl, {
@@ -17,8 +23,9 @@ export default async function handler(req, res) {
 
     const data = await response.json();
 
-    res.status(response.status).json(data);
+    return NextResponse.json(data, { statusText: 'Fetched resource succesfully.', status: 200});
+
   } catch (error) {
-    res.status(500).json({ error: 'Error proxying request' });
+    return NextResponse.json({ statusText: 'Error proxying request' }, { status: 500 });
   }
 }

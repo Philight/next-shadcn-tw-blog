@@ -11,11 +11,12 @@ import type { IGenericProps } from '@/types/generic-types';
 
 // ==================================================================
 
-export interface MainPropsType extends IGenericProps, DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> {
+export interface MainPropsType extends IGenericProps, Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, "style"> {
   children: ReactNode;
+  title: string;
 }
 
-const Main = ({ className, children, title }: MainPropsType) => {
+const Main = ({ className, children, title = 'Title' }: MainPropsType) => {
   return (
     <div className={cn('layout__c layout--main', className)}>
       <Header />

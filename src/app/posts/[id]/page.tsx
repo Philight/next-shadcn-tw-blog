@@ -21,13 +21,13 @@ export default async function Page({ params }: Props) {
   const resolvedParams = await params;
   const { id } = resolvedParams;
 
-  let post: PostType;
+  let post: PostType = {} as PostType;
 
   try {
     post = await getPost(id);
   } catch (e) {}
 
-  if (!post) {
+  if (!post || !Object.keys(post).length) {
     return <ServerError />;
   }
 
@@ -40,14 +40,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
   const { id } = resolvedParams;
 
-  let post: PostType;
+  let post: PostType = {} as PostType;
 
   try {
     post = await getPost(id);
   } catch (e) {}
 
-  if (!post) {
-    post = { author: '', title: '' };
+  if (!post || !Object.keys(post).length) {
+    post = { author: '', title: '' } as PostType;
   }
 
   return { title: `Post: ${post.title}`, description: `${post.title} ~ ${post.author}` };

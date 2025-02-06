@@ -10,7 +10,7 @@ import { ReactNode } from 'react';
 import Providers from './providers';
 
 // import { geist } from '/public/fonts/geist';
-import { lora } from '/public/fonts/lora';
+import { lora } from 'public/fonts/lora';
 import '../styles/globals.css';
 
 // ============================================================

@@ -9,7 +9,7 @@ import {
 
 // ================================================
 
-export async function getPosts(): Promise<PostType[] | null> {
+export async function getPosts(): Promise<PostType[] | any[]> {
   try {
     const method = 'GET';
     // const data = await fetchApi(`/posts/list`, { method });
@@ -18,10 +18,11 @@ export async function getPosts(): Promise<PostType[] | null> {
     return data.applications;
   } catch (e) {
     handleServerError(e);
+    return [];
   }
 }
 
-export async function getPost(id: number | string): Promise<PostType | null> {
+export async function getPost(id: number | string): Promise<PostType> {
   try {
     const method = 'GET';
     const data = await axiosApi(`/posts/view/${id}`, { method });
@@ -29,6 +30,7 @@ export async function getPost(id: number | string): Promise<PostType | null> {
     return data.post;
   } catch (e) {
     handleServerError(e);
+    return {} as PostType;
   }
 }
 

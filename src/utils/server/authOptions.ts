@@ -4,8 +4,8 @@ import xss from 'xss';
 import bcrypt from 'bcryptjs';
 import { ZodError } from 'zod';
 
-import connectMongoDB from '/lib/mongo/DBConnection';
-import User from '/lib/mongo/models/User';
+import connectMongoDB from 'lib/mongo/DBConnection';
+import User from 'lib/mongo/models/User';
 // import { logInSchema } from '/lib/zod/ValidationSchemas';
 
 export const authOptions: AuthOptions = {

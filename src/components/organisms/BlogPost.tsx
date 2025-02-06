@@ -7,13 +7,16 @@ import Heading from '@/components/atoms/Heading';
 import { Separator } from '@/components/shadcn/separator';
 import { cn } from '@/utils/functions';
 
+import type { PostType } from '@/utils/api/types';
 import type { IGenericProps } from '@/types/generic-types';
 
 // ============================================================================
 
-export interface BlogPostProps extends IGenericProps {}
+export interface BlogPostProps extends IGenericProps,PostType {
+  
+}
 
-export default function BlogPost({ className, _id, _title, content, author }: BlogPostProps) {
+export default function BlogPost({ className,  content, author }: BlogPostProps) {
   const t = useTranslations();
 
   const noBlogPosts = (

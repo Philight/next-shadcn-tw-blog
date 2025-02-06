@@ -35,7 +35,7 @@ export const routes = {
   },
 };
 
-export const navigation: { title: string; href: string; description: string }[] = [
+export const navigation: { title: (_t: any) => string; href: string; description: string }[] = [
   {
     title: (translations: any) => translations('navigation.blog'),
     href: routes.blog.root,

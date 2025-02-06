@@ -3,6 +3,7 @@ import type { MetadataRoute } from 'next';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const usersAndPagination = await getUsersWithPaginationAndFilter();
+  // @ts-ignore
   const usersURL: MetadataRoute.Sitemap = usersAndPagination.users.map((user) => {
     return {
       url: `https://addwebsite.com/${user}`,

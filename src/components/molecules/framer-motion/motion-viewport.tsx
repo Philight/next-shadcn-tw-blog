@@ -7,7 +7,7 @@ import { varContainer } from './variants';
 
 interface Props {
   children: React.ReactNode;
-  disableAnimatedMobile?: boolean;
+  _disableAnimatedMobile?: boolean;
 }
 
 export default function MotionViewport({ children, _disableAnimatedMobile = true, ...other }: Props) {

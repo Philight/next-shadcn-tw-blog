@@ -12,6 +12,12 @@ import { BREAKPOINTS, pxToEm } from './src/responsive';
 
 // =========================================================================
 
+type CSSVariables = {
+  colors?: any;
+  boxShadow?: any;
+  fontFamily?: any;
+}
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /*
@@ -20,7 +26,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CSSFile = 'src/styles/1-settings/variables.css';
 
 const CSSVariablesPath = path.join(__dirname, CSSFile);
-const CSS_VARIABLES = parseCSS(CSSVariablesPath) ?? {};
+const CSS_VARIABLES:CSSVariables = parseCSS(CSSVariablesPath) ?? {} as CSSVariables;
 
 // =========================================================================
 

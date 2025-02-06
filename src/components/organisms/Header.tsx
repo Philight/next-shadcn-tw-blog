@@ -21,12 +21,12 @@ import {
 import { ICONS_SIZES } from '@/utils/constants';
 import {
   routes, navigation 
-} from '/src/navigation';
+} from 'src/navigation';
 import { cn } from '@/utils/functions';
 import type { IGenericProps } from '@/types/generic-types';
 
 import { List } from 'lucide-react';
-import { roboto } from '/public/fonts/roboto';
+import { roboto } from 'public/fonts/roboto';
 
 // ================================================================
 
@@ -75,7 +75,7 @@ function BurgerMenu({ className }: BurgerMenuProps) {
           </NavigationMenuTrigger>
           <NavigationMenuContent className="navigation__menu">
             <ul className="grid w-[200px] gap-3 p-4  ">
-              {navigation.map((item) => (
+              {navigation.map((item: any) => (
                 <ListItem key={uuidv4()} title={item.title(t)} href={item.href}>
                   {item.description}
                 </ListItem>

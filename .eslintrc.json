@@ -77,7 +77,7 @@
       }
     ],
     "max-nested-callbacks": [2, 3],
-    "newline-after-var": [2, "always"],
+    "newline-after-var": [0, "always"],
     "no-param-reassign": [
       0,
       {
@@ -86,7 +86,7 @@
     ],
     "linebreak-style": [0, "windows"],
     "padding-line-between-statements": [
-      2,
+      0,
       {
         "blankLine": "always",
         "prev": "*",

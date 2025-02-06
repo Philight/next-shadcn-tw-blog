@@ -78,7 +78,7 @@ export default function CreatePost({ className }: CreatePostProps) {
         }
 
         // RESPONSE ERROR
-      } catch (error) {
+      } catch (error: any) {
         if (error.message && error.message.trim().length !== 0) {
           showToast({ status: error.status, message: error.message, options: { duration: 10000 } });
         }

@@ -1,0 +1,80 @@
+/**
+ * THEME
+ * 
+ * BREAKPOINTS: 1. mob-lg | 2. tab-sm | 3. tab-lg  | 4. desk-md 
+ * 
+ */
+
+@layer base {
+  /** 
+   * LAYOUT SETTINGS
+   */
+
+  .section-spacing {
+    @apply mt-16;
+  }
+
+  .layout__c {
+    @apply relative z-0 min-h-screen f-col;
+  }
+
+  .header__c {
+    @apply f-center-y fixed left-0 top-0 right-0 z-100 h-[var(--header-height)] justify-between;
+    @apply page-max-w;
+    @apply bg-black/20;
+
+    .logo {
+      @apply w-auto h-10 translate-y-1;
+    }
+
+    .navigation__c {
+      &.navigation--mobile {
+        @apply w-[60px];
+        button {
+          @apply h-9 w-9 py-0 px-2;
+        }
+        .lucide-chevron-down {
+          @apply hidden;
+        }
+      }
+
+      &.navigation--desktop {
+        @media screen(tab-sm) {
+          @apply f-center-y gap-[39px];
+          @apply text-white text-xs font-bold;
+        }
+        li {
+          @apply relative flex justify-center;
+          &.active {
+            @apply before:scale-x-100;
+          }
+          &:hover {
+            @apply before:scale-x-100 before:origin-left;
+          }
+          @apply before:translate-y-1 before:w-[120%] before:h-0.5  before:bg-[#D4A373] before:absolute  before:bottom-0;
+          @apply before:scale-x-0 before:origin-right before:transition-transform before:duration-300;
+        }
+      }
+      &.open {
+        @apply opacity-100;
+      }
+      &.closed {
+        @apply h-0 -translate-y-screen-full-y opacity-0;
+      }
+
+      .navigation__items {
+      }
+      .navigation__links li {
+        @apply flex w-full justify-between;
+      }
+      .navigation__links ~ .divider__c {
+      }
+    }
+  }
+
+  .footer__c {
+    @apply page-max-w px-[calc(var(--gutter-outer-x)-4px)] desk-sm:px-[calc(var(--gutter-outer-x)-8px)];
+    @apply h-[var(--footer-height)] f-center-y mt-auto w-full;
+    @apply bg-foreground text-background;
+  }
+}

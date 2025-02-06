@@ -1,0 +1,86 @@
+{
+  "navigation": {
+    "home": "Domov",
+    "blog": "Blog",
+    "login": "Login",
+    "signup": "Signup",
+    "profile": "Profile",
+    "logout": "Logout",
+    "create_post": "Přidat článek"
+  },
+  "buttons": {
+    "delete": "Delete",
+    "continue": "Continue",
+    "submit": "Submit",
+    "reset": "Reset",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
+  "login": {
+    "form_title": "Nice to see you again! 👀",
+    "form_redirect": {
+      "question": "Don't have an account?",
+      "link": "Signup here!"
+    }
+  },
+  "signup": {
+    "form_title": "New member, yay! 🎉",
+    "form_redirect": {
+      "question": "Already have an account?",
+      "link": "Login here!"
+    }
+  },
+  "home": {
+    "hero_title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "blog_title": "Nejnovější",
+
+    "visit_blog_post": "Navštiv {author}'s článek",
+    "user_visit_profile": "Visit {username}'s profile",
+    "user_no_socials": "This user has no socials yet."
+  },
+  "no_blog_posts": {
+    "title": "Žádné články se nenašli :(",
+    "description": "To je ale pěch...",
+    "content": "Možná, skusit to znova?"
+  },
+  "posts": {
+    "hero_title": "Title"
+  },
+  "posts_create": {
+    "hero_title": "Přidání článku",
+    "title": "Titulek",
+    "content": "Obsah",
+    "author": "Autor",
+    "send": "Odeslat",
+    "success": "Článek vytvoren"
+  },
+  "user": {
+    "hero_title": "About {name}",
+    "user_no_socials": "This user has no socials yet.",
+    "user_no_bio": "This user has no bio yet."
+  },
+  "toast": {
+    "fetch_users_error": "Could not fetch users"
+  },
+  "no_users_card": {
+    "title": "No users found :(",
+    "description": "Well that was unfortunate...",
+    "content": "Maybe try again?"
+  },
+  "filter": {
+    "title": "Looking for someone?",
+    "placeholder": "Search by username or email",
+    "sort_asc": "Sort alphabetically",
+    "sort_desc": "Sort in reverse alphabetical order"
+  },
+  "pagination": {
+    "previous_btn": "Previous",
+    "next_btn": "Next"
+  },
+  "footer": {
+    "title": "Need any support or have a new project in mind? We're always open for a chat, so get in touch to find out how we can help!",
+    "subtitle": "Developed & Designed by",
+    "follow_us": "Follow us",
+    "sitemap": "Sitemap"
+  }
+}

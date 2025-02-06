@@ -1,0 +1,21 @@
+/**
+ * PLUGINS
+ * 
+ * override external components, styles
+ * 
+ */
+
+@layer utilities {
+  /** 
+   * DAISYUI OVERRIDE 
+   */
+
+  .btn-outline {
+    @apply border-solid;
+
+    transition: opacity ease-in-out 0.4s;
+    &:hover {
+      @apply opacity-80;
+    }
+  }
+}

@@ -8,7 +8,7 @@ export const defaultPage = 1;
 export const defaultLocale = 'cs' as const;
 export const locales = ['cs'] as const;
 
-export const pathnames: Pathnames<typeof locales> = { '/': '/', };
+export const pathnames: Pathnames<typeof locales> = { '/': '/' };
 
 // export const localePrefix: LocalePrefix<typeof locales> = 'as-needed';
 export const localePrefix = 'as-needed' as LocalePrefix;

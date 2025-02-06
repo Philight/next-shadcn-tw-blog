@@ -1,9 +1,9 @@
+import { Metadata } from 'next';
+
 import BlogList from '@/organisms/BlogList';
 import { getPosts } from '@/utils/api/posts';
 import type { PostType } from '@/utils/api/types';
 import ServerError from '@/molecules/ServerError';
-
-import { Loader2 } from 'lucide-react';
 
 // ===============================================================
 
@@ -16,17 +16,16 @@ export const revalidate = 86400;
 
 // ===============================================================
 
-interface Props {}
-
 export default async function Home() {
   let posts: PostType[] = [];
-
 
   try {
     posts = await getPosts();
   } catch (e) {}
 
-  if (!posts.length) {return <ServerError />;}
+  if (!posts.length) {
+    return <ServerError />;
+  }
 
   return (
     <>

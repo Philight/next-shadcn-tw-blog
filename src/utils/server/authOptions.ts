@@ -6,7 +6,7 @@ import { ZodError } from 'zod';
 
 import connectMongoDB from '/lib/mongo/DBConnection';
 import User from '/lib/mongo/models/User';
-import { logInSchema } from '/lib/zod/ValidationSchemas';
+// import { logInSchema } from '/lib/zod/ValidationSchemas';
 
 export const authOptions: AuthOptions = {
   providers: [
@@ -23,7 +23,7 @@ export const authOptions: AuthOptions = {
         }
 
         try {
-          await logInSchema.parseAsync({ password: credentials.password, email: credentials.email });
+          // await logInSchema.parseAsync({ password: credentials.password, email: credentials.email });
 
           const sanitizedPassword = xss(credentials.password);
           const sanitizedEmail = xss(credentials.email);
@@ -61,14 +61,12 @@ export const authOptions: AuthOptions = {
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        // eslint-disable-next-line no-param-reassign
         token.sub = user._id;
       }
 
       return token;
     },
     async session({ session, token }) {
-      // eslint-disable-next-line no-param-reassign
       session.user.id = token.sub;
 
       return session;

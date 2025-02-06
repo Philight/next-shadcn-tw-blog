@@ -37,7 +37,6 @@ export default function ProgressBar() {
       const filteredAnchors = Array.from(anchorElements).filter((element) => {
         const href = element.getAttribute('href');
 
-
         return href && href.startsWith('/');
       });
 

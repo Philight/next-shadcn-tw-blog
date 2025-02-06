@@ -4,7 +4,6 @@ import * as React from 'react';
 const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({ className, htmlTag, ...props }, ref) => {
   const HTMLElement = htmlTag ?? 'div';
 
-
   return <HTMLElement ref={ref} className={cn('rounded-xl border bg-card text-card-foreground shadow p-6 space-y-4', className)} {...props} />;
 });
 
@@ -30,7 +29,6 @@ CardDescription.displayName = 'CardDescription';
 
 const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({ className, htmlTag, ...props }, ref) => {
   const HTMLElement = htmlTag ?? 'div';
-
 
   return <HTMLElement ref={ref} className={cn(className)} {...props} />;
 });

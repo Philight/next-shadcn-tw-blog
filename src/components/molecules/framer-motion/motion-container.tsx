@@ -1,14 +1,10 @@
-import {
-  m, MotionProps 
-} from 'framer-motion';
+import { m } from 'framer-motion';
 
 import { varContainer } from './variants';
 
 // ----------------------------------------------------------------------
 
-type IProps = BoxProps & MotionProps;
-
-export interface Props extends IProps {
+export interface Props {
   animate?: boolean;
   action?: boolean;
 }

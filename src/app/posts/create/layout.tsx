@@ -12,7 +12,6 @@ type Props = {
 export default async function Layout({ children }: Props) {
   const t = await getTranslations('posts_create');
 
-
   return <MainLayout title={t('hero_title')}>{children}</MainLayout>;
 }
 

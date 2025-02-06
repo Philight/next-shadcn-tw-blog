@@ -1,4 +1,4 @@
-import { QueryClient } from 'react-query';
+// import { QueryClient } from 'react-query';
 
 declare module '*.svg' {
   const content: any;
@@ -8,7 +8,7 @@ declare module '*.svg' {
 
 declare global {
   interface Window {
-    queryClient: QueryClient;
+    // queryClient: QueryClient;
   }
 }
 

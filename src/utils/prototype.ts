@@ -28,7 +28,6 @@ Array.prototype.sortNested = function ({ property, order = 'asc' }: { property: 
     let a = aParam;
     let b = bParam;
 
-
     while (i < len) {
       a = a[prop[i]];
       b = b[prop[i]];

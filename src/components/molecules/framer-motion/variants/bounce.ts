@@ -87,7 +87,7 @@ export const varBounce = (props?: VariantsType) => {
     },
 
     // OUT
-    out: { animate: { scale: [0.9, 1.1, 0.3], opacity: [1, 1, 0] }, },
+    out: { animate: { scale: [0.9, 1.1, 0.3], opacity: [1, 1, 0] } },
     outUp: {
       animate: {
         y: [-12, 24, -720],
@@ -102,7 +102,7 @@ export const varBounce = (props?: VariantsType) => {
         opacity: [1, 1, 0],
       },
     },
-    outLeft: { animate: { x: [0, 24, -720], scaleX: [1, 0.9, 2], opacity: [1, 1, 0] }, },
-    outRight: { animate: { x: [0, -24, 720], scaleX: [1, 0.9, 2], opacity: [1, 1, 0] }, },
+    outLeft: { animate: { x: [0, 24, -720], scaleX: [1, 0.9, 2], opacity: [1, 1, 0] } },
+    outRight: { animate: { x: [0, -24, 720], scaleX: [1, 0.9, 2], opacity: [1, 1, 0] } },
   };
 };

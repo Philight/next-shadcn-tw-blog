@@ -1,7 +1,16 @@
 {
   "root": true,
-  "plugins": ["perfectionist", "unused-imports", "prettier"],
+  "plugins": ["perfectionist", "unused-imports", "@typescript-eslint", "prettier"],
   "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:import/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": "./tsconfig.json"
+  },
   "ignorePatterns": [".git", ".env", ".next", "i18n", "node_modules", "public", "next.config.ts", "postcss.config.mjs", "tailwind.config.ts"],
   "settings": {
     "import/resolver": {
@@ -13,8 +22,12 @@
   "rules": {
     "import/newline-after-import": 2,
     "import/no-unused-modules": 2,
-    "no-unused-vars": 2,
-    "no-console": 2,
+    "import/no-anonymous-default-export": 0,
+    "unused-imports/no-unused-imports": 1,
+
+    "no-unused-vars": [0, { "ignoreRestSiblings": true }],
+    "no-console": 0,
+    "no-empty": 0,
     "no-var": 2,
     "curly": [2, "all"],
     // "max-len": [
@@ -45,8 +58,8 @@
       }
     ],
     "max-depth": [2, 3],
-    "max-params": [2, 3],
-    "complexity": [2, 10],
+    "max-params": [1, 6],
+    "complexity": [2, 100],
     "max-lines": [
       2,
       {
@@ -66,12 +79,12 @@
     "max-nested-callbacks": [2, 3],
     "newline-after-var": [2, "always"],
     "no-param-reassign": [
-      2,
+      0,
       {
         "props": true
       }
     ],
-    "linebreak-style": [2, "windows"],
+    "linebreak-style": [0, "windows"],
     "padding-line-between-statements": [
       2,
       {
@@ -90,7 +103,7 @@
         "next": ["const", "let", "var"]
       }
     ],
-    "no-inline-comments": 2,
+    "no-inline-comments": 0,
     "object-curly-newline": [
       2,
       {
@@ -111,6 +124,12 @@
       }
     ],
     "object-curly-spacing": [2, "always"],
-    "prefer-destructuring": [2]
+    "prefer-destructuring": [1],
+    "react/display-name": 0,
+
+    "@typescript-eslint/no-unused-vars": [
+      1,
+      { "caughtErrors": "none", "varsIgnorePattern": "^_", "argsIgnorePattern": "^_", "destructuredArrayIgnorePattern": "^_", "ignoreRestSiblings": true }
+    ]
   }
 }

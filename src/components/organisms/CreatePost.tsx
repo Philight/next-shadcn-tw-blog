@@ -1,22 +1,21 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { useTransition } from 'react';
+import React, { useTransition } from 'react';
 import { Loader2 } from 'lucide-react';
 
 import { newPostSchema } from '@/lib/zod/ValidationSchemas';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
 
 import { Button } from '@/components/shadcn/button';
 import FormProvider, {
   Field, useForm 
 } from '@/components/molecules/hook-form';
-import { useFormErrors } from '@/hooks/use-form-errors';
 
 import Container from '@/layouts/Container';
 
 import { createPost } from '@/utils/api/posts';
-import type { PostType } from '@/utils/api/types';
 import { cn } from '@/utils/functions';
 import { showToast } from '@/utils/helpers';
 import { IS_DEVELOPMENT } from '@/utils/constants';
@@ -45,7 +44,7 @@ export default function CreatePost({ className }: CreatePostProps) {
     // reset,
     formState,
     handleSubmit,
-    setError,
+    // setError,
     clearErrors,
   } = methods;
 
@@ -55,7 +54,9 @@ export default function CreatePost({ className }: CreatePostProps) {
         event?.preventDefault();
         clearErrors();
 
-        if (IS_DEVELOPMENT) {showToast({ type: 'OBJECT', message: data });}
+        if (IS_DEVELOPMENT) {
+          showToast({ type: 'OBJECT', message: data });
+        }
 
         // TRANSFORM FIELDS & SEND REQUEST
 

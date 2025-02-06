@@ -3,7 +3,7 @@ import { MotionValue } from 'framer-motion';
 
 export type TGenericObject = { [key: string]: unknown };
 
-export type IGenericComponent = JSX.Element | React.ReactNode | null;
+export type IGenericComponent = React.ReactNode | null;
 
 export interface IGenericProps {
   className?: string;

@@ -20,9 +20,7 @@ export const validateFields = async (schema: any, data: any) => {
 export const validateAndSetErrors = async (schema: any, setError: any, data: any) => {
   const validationErrors = await validateFields(schema, data);
 
-
   if (validationErrors) {
-     
     for (const field in validationErrors) {
       if (field in validationErrors) {
         setError(field as any, { type: validationErrors[field].type, message: validationErrors[field].message });
@@ -36,7 +34,6 @@ export const validateAndSetErrors = async (schema: any, setError: any, data: any
 // export const getFormValues = (fieldNames: T[], getValues: (fields: T[]) => string[]): Record<keyof T, any> => {
 export const getFormValues = (fieldNames: string[], getValues: (fields: string[]) => string[]) => {
   const fieldValues = getValues(fieldNames);
-
 
   return fieldNames.reduce(
     (acc, fieldName, index) => ({

@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import mongoose from 'mongoose';
 
 const connectMongoDB = async () => {
@@ -22,7 +21,7 @@ const connectMongoDB = async () => {
 
     return true;
   } catch (error) {
-    console.log('connectMongoDB error');
+    console.log('connectMongoDB error', error);
 
     throw new Error('Could not connect to MongoDB');
   }

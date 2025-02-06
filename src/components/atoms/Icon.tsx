@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default {
   Star: (props: React.SVGProps<SVGSVGElement>) => (
     <svg {...props} fill="currentColor" viewBox="4 4 48 48" xmlns="http://www.w3.org/2000/svg">

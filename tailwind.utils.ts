@@ -34,13 +34,12 @@ export function hexToRGB(hex) {
  */
 const transformColor = (declaration: String) => {
   const CSSDeclarationSplit = declaration.replace(';', '').split(':'); // --color-tertiary, var(--color-hermes-orange)
-  const declarationName = String(CSSDeclarationSplit[0]).removeWhitespace(); // --color-tertiary
+  // const declarationName = String(CSSDeclarationSplit[0]).removeWhitespace(); // --color-tertiary
   const declarationValue = CSSDeclarationSplit[1]; // var(--color-hermes-orange) // rgb(255 0 255)
 
   // RGB
   if (declarationValue.includes('rgb(')) {
-    const rgb = declarationValue.split('rgb(')[1].split(')')[0];
-
+    const [rgb] = declarationValue.split('rgb(')[1].split(')');
 
     return rgb.includes(',') ? `rgba(${rgb}, <alpha-value>)` : `rgba(${rgb} / <alpha-value>)`;
 

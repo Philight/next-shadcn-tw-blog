@@ -1,9 +1,6 @@
 // 'use client';
 
 import { ReactNode } from 'react';
-import type {
-  Metadata, Viewport 
-} from 'next';
 // import { QueryClientProvider } from '@tanstack/react-query';
 // import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 

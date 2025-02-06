@@ -20,9 +20,9 @@ const ROOTS = {
 
 export const routes = {
   home: '/',
-  landing: { root: ROOTS.HOME, },
+  landing: { root: ROOTS.HOME },
   // BLOG
-  blog: { root: ROOTS.BLOG, },
+  blog: { root: ROOTS.BLOG },
   posts: {
     root: ROOTS.POSTS,
     id: `${ROOTS.POSTS}/{$id}`,

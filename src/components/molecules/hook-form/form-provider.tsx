@@ -1,13 +1,11 @@
-import { forwardRef } from 'react';
-import {
-  UseFormReturn, FormProvider as Form 
-} from 'react-hook-form';
+import React, { forwardRef } from 'react';
+import { FormProvider as Form } from 'react-hook-form';
 
 // ----------------------------------------------------------------------
 
 type Props = {
   children: React.ReactNode;
-  methods: UseFormReturn<any>;
+  methods: any;
   onSubmit?: VoidFunction;
   formProps?: any;
 };

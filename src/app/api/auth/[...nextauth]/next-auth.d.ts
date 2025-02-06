@@ -1,8 +1,5 @@
-/* eslint-disable no-unused-vars */
-import NextAuth, { DefaultSession } from 'next-auth';
-import {
-  JWT, DefaultJWT 
-} from 'next-auth/jwt';
+import NextAuth from 'next-auth';
+import { DefaultJWT } from 'next-auth/jwt';
 
 export interface SocialsInterface {
   label: string;
@@ -25,7 +22,7 @@ declare module 'next-auth' {
   interface Session {
     user: {
       id?: string;
-    } & DefaultSession['user'];
+    } & NextAuth.DefaultSession['user'];
   }
 
   interface User extends UserInterface {}

@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import {
   m, domMax, LazyMotion 
 } from 'framer-motion';

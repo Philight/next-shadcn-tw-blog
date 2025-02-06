@@ -6,12 +6,12 @@ import { routes } from './navigation';
 
 // ----------------------------------------------------------------------
 
-const allowedOrigins = ['https://acme.com', 'https://my-app.org'];
+// const allowedOrigins = ['https://acme.com', 'https://my-app.org'];
 
-const corsOptions = {
-  'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-};
+// const corsOptions = {
+//   'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+//   'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+// };
 
 // ----------------------------------------------------------------------
 
@@ -21,13 +21,11 @@ export async function middleware(request: NextRequest) {
    */
   const requestPathname = request.nextUrl.pathname;
 
-
   switch (true) {
     // Home
     case requestPathname === routes.home:
       /* Redirect to Blog as landing page */
       return NextResponse.redirect(new URL(routes.blog.root, request.url));
-      break;
   }
 
   // // Check the origin from the request

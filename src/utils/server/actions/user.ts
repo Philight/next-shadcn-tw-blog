@@ -10,9 +10,9 @@ import bcrypt from 'bcryptjs';
 
 import connectMongoDB from '/lib/mongo/DBConnection';
 import User from '/lib/mongo/models/User';
-import {
-  signUpSchema, socialSchema, updatePasswordSchema 
-} from '/lib/zod/ValidationSchemas';
+// import {
+//   signUpSchema, socialSchema, updatePasswordSchema
+// } from '/lib/zod/ValidationSchemas';
 
 import {
   SocialsInterface, UserInterface 
@@ -32,7 +32,7 @@ export async function createUser(prevState: any, formData: FormData) {
 
     const { email, username, password } = rawFormData;
 
-    await signUpSchema.parseAsync(rawFormData);
+    // await signUpSchema.parseAsync(rawFormData);
 
     const sanitizedPassword = xss(password!.toString());
     const sanitizedEmail = xss(email!.toString());
@@ -40,7 +40,7 @@ export async function createUser(prevState: any, formData: FormData) {
 
     await connectMongoDB();
 
-    const existingUser = await User.findOne({ $or: [{ email: sanitizedEmail }, { username: sanitizedUsername }], });
+    const existingUser = await User.findOne({ $or: [{ email: sanitizedEmail }, { username: sanitizedUsername }] });
 
     if (existingUser) {
       if (existingUser.email === sanitizedEmail) {
@@ -86,7 +86,7 @@ export async function updateUserPassword(prevState: any, formData: FormData) {
 
     const { currentPassword, newPassword } = rawFormData;
 
-    await updatePasswordSchema.parseAsync(rawFormData);
+    // await updatePasswordSchema.parseAsync(rawFormData);
 
     const sanitizedCurrentPassword = xss(currentPassword!.toString());
     const sanitizedNewPassword = xss(newPassword!.toString());
@@ -121,7 +121,7 @@ export async function updateUserPassword(prevState: any, formData: FormData) {
 
 // PRIVATE
 // POST, UPDATE USER GENERAL DATA
-// eslint-disable-next-line complexity
+
 export async function updateUserData(prevState: any, formData: FormData) {
   try {
     const session = await getServerSession(authOptions);
@@ -291,7 +291,7 @@ export async function createSocial(prevState: any, formData: FormData) {
 
     const { label, tag, url } = rawFormData;
 
-    await socialSchema.parseAsync(rawFormData);
+    // await socialSchema.parseAsync(rawFormData);
 
     const sanitizedLabel = xss(label!.toString());
     const sanitizedTag = xss(tag!.toString());

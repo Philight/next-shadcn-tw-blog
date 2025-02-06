@@ -25,6 +25,7 @@
       "@/organisms/*": ["src/components/organisms/*"],
       "@/shadcn/*": ["src/components/shadcn/*"],
       "@/lib/*": ["lib/*"],
+      "@/i18n/*": ["i18n/*"],
       "@/types/*": ["./@types/*"],
       "@/*": ["src/*"]
     }

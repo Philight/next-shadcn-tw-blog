@@ -1,8 +1,6 @@
 'use client';
 
-import React, {
-  useEffect, useState 
-} from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
@@ -19,25 +17,15 @@ import {
   NavigationMenuContent,
   NavigationMenuLink,
 } from '@/components/shadcn/navigation-menu';
-import {
-  Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger 
-} from '@/components/shadcn/menubar';
 
-import { useActiveLink } from '@/hooks/useActiveLink';
-import {
-  AVAILABLE_LOCALES, ICONS_SIZES 
-} from '@/utils/constants';
+import { ICONS_SIZES } from '@/utils/constants';
 import {
   routes, navigation 
 } from '/src/navigation';
 import { cn } from '@/utils/functions';
-import type {
-  IGenericProps, IGenericComponent 
-} from '@/types/generic-types';
+import type { IGenericProps } from '@/types/generic-types';
 
-import {
-  List, Moon, Sun 
-} from 'lucide-react';
+import { List } from 'lucide-react';
 import { roboto } from '/public/fonts/roboto';
 
 // ================================================================
@@ -77,7 +65,6 @@ interface BurgerMenuProps extends IGenericProps {}
 
 function BurgerMenu({ className }: BurgerMenuProps) {
   const t = useTranslations();
-
 
   return (
     <NavigationMenu className={cn('navigation__c', className)}>
@@ -122,7 +109,6 @@ const ListItem = React.forwardRef<React.ElementRef<'a'>, React.ComponentPropsWit
     </li>
   );
 });
-
 
 ListItem.displayName = 'ListItem';
 

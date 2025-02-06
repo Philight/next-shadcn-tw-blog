@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import React from 'react';
 import { getTranslations } from 'next-intl/server';
 
@@ -12,7 +11,6 @@ type Props = {
 
 export default async function Layout({ children }: Props) {
   const t = await getTranslations('home');
-
 
   return <MainLayout title={t('hero_title')}>{children}</MainLayout>;
 }

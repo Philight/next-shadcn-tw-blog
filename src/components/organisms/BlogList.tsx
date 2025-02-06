@@ -3,7 +3,6 @@ import { useTranslations } from 'next-intl';
 import {
   Card, CardContent, CardDescription, CardHeader, CardTitle 
 } from '../shadcn/card';
-import { UserCard } from '@/components/molecules/UserCard';
 import BlogListItem from '@/components/molecules/BlogListItem';
 import Heading from '@/components/atoms/Heading';
 import { cn } from '@/utils/functions';

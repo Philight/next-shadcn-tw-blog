@@ -88,7 +88,6 @@ const Button = React.forwardRef<HTMLButtonElement, IButtonProps>(
   ) => {
     const hasChildren = !!children;
 
-
     return (
       <div className={cn(`button__c f-center`, className)} style={style}>
         <button
@@ -117,7 +116,6 @@ const Button = React.forwardRef<HTMLButtonElement, IButtonProps>(
     );
   },
 );
-
 
 Button.displayName = 'Button';
 

@@ -19,7 +19,3 @@ export interface CreatePostParams {
   content: string;
   author: string;
 }
-
-export interface SubcategoryType extends CategoryType {
-  category_id?: number;
-}
